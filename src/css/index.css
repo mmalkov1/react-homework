@@ -45,7 +45,9 @@ th {
 	border: 2px solid #000;
 	background-color: rgb(216, 216, 216);
 }
-.menu {
+.menu,
+.history,
+.modal__block {
 	width: 80%;
 	margin: 0 auto;
 }
@@ -64,4 +66,62 @@ th {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+}
+.backdrop {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.301);
+	z-index: 1;
+}
+.modal {
+	position: absolute;
+	left: 50%;
+	top: 20%;
+	background-color: rgb(230, 230, 230);
+	width: 25%;
+	height: auto;
+	transform: translate(-50%);
+	padding: 20px;
+	box-shadow: 3px 3px 10px grey;
+}
+.modal__times {
+	position: absolute;
+	right: 3%;
+	top: 3%;
+	width: 30px;
+	height: 30px;
+	background-color: rgba(124, 121, 121, 0.733);
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2em;
+}
+.modal__times:hover {
+	background-color: rgba(95, 94, 94, 0.733);
+	color: #fff;
+}
+.loading {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.329);
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.loading__text {
+	text-align: center;
+	font-size: 2em;
+}
+.addform__group {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1em;
 }

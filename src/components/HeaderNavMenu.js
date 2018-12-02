@@ -1,8 +1,8 @@
 import React from 'react';
 
 const HeaderNavMenu = ({ items }) =>
-	items.map((el, index) => (
-		<ul key={index}>
+	items.map(el => (
+		<ul key={el}>
 			<li>
 				<a href="/">{el}</a>
 			</li>
