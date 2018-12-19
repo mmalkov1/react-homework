@@ -1,49 +1,9 @@
-.header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	box-shadow: 1px 3px 7px rgb(189, 189, 189);
+.link {
+	margin-left: 2em;
 }
-.usermenu {
-	position: relative;
-}
-.usermenu__avatar {
-	border: 1px solid #fff;
-	border-radius: 50%;
-}
-.usermenu__name {
-	margin: 20px;
-	font-size: 24px;
-}
-.usermenu__dropdown {
-	position: absolute;
-	top: 100%;
-	width: 100%;
-	padding: 8px;
-	background-color: #fff;
-	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-		0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-}
-.form {
-	width: 30%;
-	display: flex;
-	flex-direction: column;
-	margin: 0 auto;
-}
-.form__input {
-	margin-bottom: 1em;
-	float: right;
-}
-table {
-	margin: 2em auto 0;
-	border-collapse: collapse;
-}
-td {
-	border: 1px solid #000;
-}
-th {
-	border: 2px solid #000;
-	background-color: rgb(216, 216, 216);
+.active {
+	text-decoration: none;
+	color: rgb(212, 65, 102);
 }
 .menu,
 .history,
@@ -53,56 +13,12 @@ th {
 }
 .menu__wrapper {
 	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
+	flex-direction: column;
 }
 .menu__image {
 	display: block;
-	width: 100%;
+	width: 300px;
 	height: auto;
-}
-.menu__product {
-	flex-basis: 25%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-.backdrop {
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100vw;
-	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.301);
-	z-index: 1;
-}
-.modal {
-	position: absolute;
-	left: 50%;
-	top: 20%;
-	background-color: rgb(230, 230, 230);
-	width: 25%;
-	height: auto;
-	transform: translate(-50%);
-	padding: 20px;
-	box-shadow: 3px 3px 10px grey;
-}
-.modal__times {
-	position: absolute;
-	right: 3%;
-	top: 3%;
-	width: 30px;
-	height: 30px;
-	background-color: rgba(124, 121, 121, 0.733);
-	cursor: pointer;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 2em;
-}
-.modal__times:hover {
-	background-color: rgba(95, 94, 94, 0.733);
-	color: #fff;
 }
 .loading {
 	position: fixed;
@@ -119,9 +35,4 @@ th {
 .loading__text {
 	text-align: center;
 	font-size: 2em;
-}
-.addform__group {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 1em;
 }
