@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HeaderDropdown = () => (
 	<div className="usermenu__dropdown">
 		<ul>
 			<li>
-				<a href="/">account</a>
+				<Link to="/account">Account</Link>
 			</li>
 			<li>
-				<a href="/">order history</a>
+				<Link to="/orderhistory">order history</Link>
 			</li>
 			<li>
 				<a href="/">meal planner</a>

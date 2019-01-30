@@ -1,4 +1,5 @@
 import React, { Component, createRef } from 'react';
+
 import HeaderDropdown from './HeaderDropdown';
 
 class UserMenu extends Component {
@@ -30,7 +31,9 @@ class UserMenu extends Component {
 
 	heandleWindowClick = e => {
 		const { isDropdownOpen } = this.state;
+
 		const isTargetInContainer = this.containerRef.current.contains(e.target);
+
 		if (isDropdownOpen && !isTargetInContainer) {
 			this.closeDropdown();
 		}
@@ -38,7 +41,9 @@ class UserMenu extends Component {
 
 	render() {
 		const { isDropdownOpen } = this.state;
+
 		const { userLogo, userName } = this.props;
+
 		return (
 			<div
 				className="usermenu"
@@ -52,7 +57,9 @@ class UserMenu extends Component {
 					width="60"
 					height="60"
 				/>
+
 				<span className="usermenu__name">{userName}</span>
+
 				{isDropdownOpen && <HeaderDropdown />}
 			</div>
 		);

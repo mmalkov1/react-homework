@@ -1,55 +1,50 @@
 import React, { Component } from 'react';
-import SignUpForm from './signUpForm';
-import SignInForm from './SignInForm';
-import OrderHistory from './OrderHistory';
-import Menu from './Menu';
-import Header from './Header';
-import Modal from './Modal';
-import ModalTest from './ModalTest';
-import '../css/index.css';
+import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import menuOperations from '../modules/menu/menuOperations';
+import categoryOperations from '../modules/category/categoryOperations';
+
+import Header from './Header/Header';
+import AccountPage from '../pages/AccountPage';
+import DeliveryPage from '../pages/DeliveryPage';
+import AboutPage from '../pages/AboutPage';
+import ContactPage from '../pages/ContactPage';
+import MenuListPage from '../pages/MenuListPage';
+import MenuItemPage from '../pages/MenuItemPage';
+import OrderHistoryPage from '../pages/OrderHistoryPage';
 
 class App extends Component {
-	state = {
-		isModalOpen: false,
-	};
-
-	heandleOpenModal = () => {
-		this.setState({
-			isModalOpen: true,
-		});
-	};
-
-	heandleCloseModal = () => {
-		this.setState({
-			isModalOpen: false,
-		});
-	};
+	componentDidMount() {
+		const { fetchMenuItems, fetchCategoryItems } = this.props;
+		fetchMenuItems();
+		fetchCategoryItems();
+	}
 
 	render() {
-		const { isModalOpen } = this.state;
 		return (
 			<div>
-				{isModalOpen && (
-					<Modal closeModal={this.heandleCloseModal} isModalOpen={isModalOpen}>
-						<ModalTest />
-					</Modal>
-				)}
-				<h1>Foody</h1>
 				<Header />
-				<div className="modal__block">
-					<h2>Modal Block</h2>
-					<button type="button" onClick={this.heandleOpenModal}>
-						Open Modal
-					</button>
-				</div>
-
-				<SignUpForm />
-				<SignInForm />
-				<OrderHistory />
-				<Menu />
+				<Switch>
+					<Route path="/menu/:id" component={MenuItemPage} />
+					<Route path="/menu" component={MenuListPage} />
+					<Route path="/about" component={AboutPage} />
+					<Route path="/account" component={AccountPage} />
+					<Route path="/contacts" component={ContactPage} />
+					<Route path="/delivery" component={DeliveryPage} />
+					<Route path="/orderhistory" component={OrderHistoryPage} />
+				</Switch>
 			</div>
 		);
 	}
 }
 
-export default App;
+const mapDispatchToProps = {
+	fetchMenuItems: menuOperations.fetchAllMenuItems,
+	fetchCategoryItems: categoryOperations.fetchAllCategoryItems,
+};
+
+export default connect(
+	null,
+	mapDispatchToProps,
+)(App);
