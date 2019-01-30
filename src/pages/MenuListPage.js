@@ -10,11 +10,10 @@ import categorySelectors from '../modules/category/categorySelectors';
 
 class MenuListContainer extends Component {
 	render() {
-		const { category } = this.props || [];
-		const { onChange } = this.props;
+		const { onChange, value, category = [] } = this.props;
 		return (
 			<>
-				<CategoryList category={category} onChange={onChange} />
+				<CategoryList category={category} onChange={onChange} value={value} />
 				<MenuList {...this.props} />
 			</>
 		);
